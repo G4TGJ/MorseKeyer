@@ -1,8 +1,9 @@
 # MorseKeyer
  G4TGJ Morse Keyer
 
-This is the software for the TGJ Morse Keyer (TMK) which is described at [my website](https://g4tgj.github.io/Morse-Keyer/). 
-It is built using Atmel Studio 7. The project file is TMK/TMK.atsln.
+This is the software for the TGJ Morse Keyer (TMK) which is described at [my website](https://g4tgj.github.io/Morse-Keyer/).
+
+You can flash a pre-built hex file (look under the releases tab) or you can build it using Atmel Studio 7. The project file is TMK/TMK.atsln.
 
 Configuration options are set in config.h. If for any reason you use different hardware pins they can be set in this file but the main
 reason for changing this file is to set the keyer mode or the two speeds set by the keyer switch.

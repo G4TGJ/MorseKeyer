@@ -5,14 +5,21 @@ This is the software for the TGJ Morse Keyer (TMK) which is described at [my web
 
 You can flash a pre-built hex file (look under the releases tab) or you can build it using Atmel Studio 7. The project file is TMK/TMK.atsln.
 
-Configuration options are set in config.h. If for any reason you use different hardware pins they can be set in this file but the main
-reason for changing this file is to set the keyer mode or the two speeds set by the keyer switch.
+By default the keyer is in Iambic A mode with a slow speed of 16wpm and a fast speed of 20wpm but these can be overriden by writing to
+the EEPROM. The file can be created in any text editor and written in Avrdudess - select raw binary as the format.
 
-    #define MIN_MORSE_WPM 16 // Speed when SW1 is open
-    #define MAX_MORSE_WPM 20 // Speed when SW1 is closed
+Data format:
 
-    // 0 for Iambic A, 1 for Iambic B or 2 for Ultimatic (defined by enum eMorseKeyerMode in morse.h)
-    #define KEYER_MODE 0 
+    TMK x yy zz
 
-The keyer mode can be set on the compiler command line. To make it easy to produce Iambic A, Iambic B and Ultimatic keyer software
-the batch build can be used to build all these by one command.
+    Always starts with TMK
+    x is A for Iambic A, B for Iambic B or U for Ultimatic
+    yy is the slow morse speed in wpm
+    zz is the fast morse speed in wpm
+ 
+For example:
+
+    TMK U 14 28
+
+If the format is incorrect or the slow and fast speeds are outside
+the min (10wpm) and max (30wpm) limits defined in config.h then the default values are used.

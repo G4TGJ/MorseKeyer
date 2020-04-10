@@ -22,7 +22,20 @@
 // ASCII "TMK " in little endian format
 #define MAGIC 0x204b4d54
 
-// TMK A 16 30 Memory keyer text\n
+// Data format:
+// TMK x yy zz
+//
+// Always starts with TMK
+// x is A for Iambic A, B for Iambic B or U for Ultimatic
+// yy is the slow morse speed in wpm
+// zz is the fast morse speed in wpm
+// 
+// For example:
+// TMK A 16 30
+//
+// If the format is incorrect or the slow and fast speeds are outside
+// the min and max limits defined in config.h then the default values
+// from config.h are used.
 
 // Cached version of the NVRAM - read from the EEPROM at boot time
 static struct __attribute__ ((packed)) 

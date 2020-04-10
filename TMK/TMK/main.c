@@ -11,6 +11,7 @@
 #include "io.h"
 #include "millis.h"
 #include "morse.h"
+#include "nvram.h"
 
 // Function called by the morse logic when the key is going down (or up)
 void keyDown( bool bDown )
@@ -38,16 +39,18 @@ int main(void)
     // Configure the inputs and outputs
     ioConfigure();
 
-    // Configure the morse logic and set the speed
+    // Initialise the NVRAM
+    nvramInit();
+
+    // Configure the morse logic and set the keyer mode
     morseConfigure();
-    morseSetWpm(DEFAULT_MORSE_WPM);
-    morseSetKeyerMode(KEYER_MODE);
+    morseSetKeyerMode(nvramReadMorseKeyerMode());
 
     // Main loop
     while (1) 
     {
         // Read the speed switch and use this to set the morse speed
-        morseSetWpm( ioReadMorseSpeedSwitch() ? MAX_MORSE_WPM : MIN_MORSE_WPM );
+        morseSetWpm( ioReadMorseSpeedSwitch() ? nvramReadFastWpm() : nvramReadSlowWpm() );
 
         // Scan the morse paddles and process
         // If nothing is happening we want to go into power down mode

@@ -25,16 +25,14 @@ typedef uint8_t bool;
 #define F_CPU 8000000UL
 
 // Morse definitions
-// Default, minimum and maximum morse speed in wpm
-#define DEFAULT_MORSE_WPM 18
-#define MIN_MORSE_WPM 16
-#define MAX_MORSE_WPM 20
+// Default slow and fast speeds, and minimum and maximum valid morse speeds in wpm
+#define DEFAULT_SLOW_WPM 16
+#define DEFAULT_FAST_WPM 20
+#define MIN_MORSE_WPM 10
+#define MAX_MORSE_WPM 30
 
-// Default morse keyer mode - should be set from the
-// compiler command line
-#ifndef KEYER_MODE
-#define KEYER_MODE 0
-#endif
+// Default morse keyer mode
+#define DEFAULT_KEYER_MODE 0
 
 // Morse paddle inputs
 #define MORSE_PADDLE_DOT_PORT_REG   PORTB

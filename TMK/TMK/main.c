@@ -34,7 +34,7 @@ void displayMorse( char *text )
 int main(void)
 {
     // Set up the timer
-    setup_millis();
+    millisInit();
 
     // Configure the inputs and outputs
     ioConfigure();
@@ -42,8 +42,8 @@ int main(void)
     // Initialise the NVRAM
     nvramInit();
 
-    // Configure the morse logic and set the keyer mode
-    morseConfigure();
+    // Initialise the morse logic and set the keyer mode
+    morseInit();
     morseSetKeyerMode(nvramReadMorseKeyerMode());
 
     // Main loop

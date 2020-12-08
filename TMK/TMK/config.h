@@ -22,7 +22,7 @@ typedef uint8_t bool;
 
 // Processor definitions
 // CPU clock speed
-#define F_CPU 8000000UL
+#define F_CPU 1000000UL
 
 // Morse definitions
 // Default slow and fast speeds, and minimum and maximum valid morse speeds in wpm

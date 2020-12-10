@@ -75,6 +75,7 @@ int main(void)
                 set_sleep_mode(POWER_DOWN_MODE);
                 sleep_mode();
                 ioEnableMorseSpeedSwitchPullUp();
+                count = 0;
             }
         }
     }

@@ -1,0 +1,4 @@
+app:
+  build:
+    image: morsekeyer
+    dockerfile: dockerfile

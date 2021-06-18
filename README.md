@@ -1,7 +1,7 @@
 # MorseKeyer
  G4TGJ Morse Keyer
 
-This is the software for the TGJ Morse Keyer (TMK) which is described at [my website](https://g4tgj.github.io/Morse-Keyer/).
+This is the software for the TGJ Morse Keyer (TMK) which was published in RadCom June 2021 and is described at [my website](https://g4tgj.github.io/Morse-Keyer/).
 
 You can flash a pre-built hex file (look under the releases tab) or you can build it using Atmel Studio 7. The project file is TMK/TMK.atsln.
 
